@@ -1,0 +1,13 @@
+name: 'Docker build'
+description: 'Run commands in an Arch Linux Docker container'
+
+inputs:
+  entrypoint:
+    description: 'path to executable within git repository'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.entrypont }}
